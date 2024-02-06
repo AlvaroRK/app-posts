@@ -4,11 +4,12 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   NavbarMenuItem,
   NavbarMenuToggle,
   NavbarMenu,
 } from "@nextui-org/react";
+
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -22,25 +23,27 @@ const Nav = () => {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
-          <p className="font-bold text-inherit">App-posts</p>
-        </NavbarBrand>
+        <Link to={"/"}>
+          <NavbarBrand>
+            <p className="font-bold text-inherit">App-posts</p>
+          </NavbarBrand>
+        </Link>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
-          <Link className="text-black" href="#" aria-current="page">
-            Features
+          <Link className="text-black" to={"/posts"} aria-current="page">
+            Posts
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-black" href="#">
-            Customers
+          <Link className="text-black" to={"/photos"}>
+            Photos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-black" href="#">
-            Integrations
+          <Link className="text-black" to={"/users"}>
+            Users
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -48,6 +51,7 @@ const Nav = () => {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
+              to={item}
               color={
                 index === 2
                   ? "primary"
