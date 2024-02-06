@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Post from "../Post";
+import Post from "./Post";
 
 const PostsContainer = () => {
   const [api, setApi] = useState([]);
@@ -14,7 +14,7 @@ const PostsContainer = () => {
     setApi(dataJson);
   };
   return (
-    <main>
+    <main className="grid grid-cols-4 gap-8">
         <Post postC={api}></Post>
     </main>
   )
