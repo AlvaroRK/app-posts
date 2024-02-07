@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Photos from "./Photos";
+import Photo from "./Photo";
 
 
 
@@ -21,8 +21,8 @@ const PhotosContainer = () => {
     setApi(dataJson.slice(0, maxItem));
   };
   return (
-    <main className="grid grid-cols-4 gap-8">
-        <Photos photosC={api}></Photos>
+    <main className="grid grid-cols-5 gap-8">
+        <Photo photosC={api}></Photo>
     </main>
   )
 }

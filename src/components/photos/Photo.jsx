@@ -1,6 +1,6 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 
-const Photos = ({ photosC }) => {
+const Photo = ({ photosC }) => {
   return (
     <>
       {photosC.map((photo, i) => {
@@ -18,4 +18,4 @@ const Photos = ({ photosC }) => {
     </>
   );
 };
-export default Photos;
+export default Photo;
